@@ -13,6 +13,7 @@ def standard_env():
     '+':          operator.add,
     '-':          operator.sub,
     '*':          operator.mul,
+    '**':         operator.pow,
     '/':          operator.truediv,
     '<':          operator.lt,
     '>':          operator.gt,
@@ -33,13 +34,14 @@ def standard_env():
     'map':        lambda *args: list(map(*args)),
     'max':        max,
     'min':        min,
-    'not':        operator._not,
+    'not':        operator.not_,
     'null?':      lambda x: x == [], 
     'number?':    lambda x: isinstance(x, Number),   
     'procedure?': lambda x: callable(x),
     'round':      round,
     'symbol?':    lambda x: isinstance(x, Sym),
     'print':      lambda x: print(lysp_repr(x)),
+    'cond'
   }
 
 def tokenize(program):
